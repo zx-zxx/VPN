@@ -1,0 +1,46 @@
+services:
+  pqc-vpn-client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    networks:
+      pqc-vpn-net:
+        ipv4_address: 192.168.2.10  # 改为了不同的子网
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    sysctls:
+      - net.ipv4.ip_forward=1
+    depends_on:
+      - pqc-vpn-server
+    command: sh -c "tcpdump -i eth0 -w /tmp/client_eth0_traffic.pcap & go run client.go"
+    volumes:
+      - ./client/pcaps:/tmp
+
+  pqc-vpn-server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    networks:
+      pqc-vpn-net:
+        ipv4_address: 192.168.2.50  # 改为了不同的子网
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    sysctls:
+      - net.ipv4.ip_forward=1
+    command: >
+      sh -c "tcpdump -i eth0 -w /tmp/server_eth0_traffic.pcap & iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE && ./pqc-vpn-server"
+    volumes:
+      - ./server/pcaps:/tmp
+
+networks:
+  pqc-vpn-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.2.0/24

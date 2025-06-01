@@ -47,7 +47,7 @@
     go get github.com/songgao/water
     ```
   
-    ![water库](.\images\water库.png)
+    <img src=".\images\water库.png" alt="water库" style="zoom:80%;" />
 
 ## 1.4 Key Share Algorithm
 

@@ -1,5 +1,3 @@
-![image-20250601151216265](C:\Users\12246\AppData\Roaming\Typora\typora-user-images\image-20250601151216265.png)
-
 # 写在最前面
 
 压缩包中有三个文件夹，分别为 `baseline-vpn-project`、`vpn-project`、`pqc-vpn-project`。

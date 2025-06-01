@@ -1,8 +1,0 @@
-# import config
-packagefile crypto/tls=/root/.cache/go-build/56/567bce6ab31121ba41d7d73580f523d7ee8ae35f8d20e7a4ca814a0a5d3ed7d7-d
-packagefile crypto/x509=/root/.cache/go-build/32/32e1a331d1a31f47d11490fa4a34e27df06842f0f42c4d9e60c4aa61d6e7e83b-d
-packagefile github.com/songgao/water=/root/.cache/go-build/13/139e4325d8485ffe6a4cb708c28e70b71ef318fa5e9d4b3aa6999b8ba79f42c4-d
-packagefile io/ioutil=/root/.cache/go-build/ba/ba3e48a728af1c894e67054cb56d9361d0078197bbe7e81c762978ef7bbeb291-d
-packagefile log=/root/.cache/go-build/b0/b0c59a6c9265d3e7fb4e1b201726cb0a32f228f3d7c403f6c3df686a65d782cf-d
-packagefile os/exec=/root/.cache/go-build/c7/c756ba6b300112e19fa4316a1a8d699099737306dd847eea1f382dd7107d605c-d
-packagefile runtime=/root/.cache/go-build/f5/f5f72d3edd7c69903cb183a950ed24b831c0bbac8beffc77f619cd8508be8b3e-d
